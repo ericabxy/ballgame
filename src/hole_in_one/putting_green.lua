@@ -11,7 +11,7 @@ local PuttingGreen = boundary.new{
   friction = 0.80,
 }
 
-function PuttingGreen:draw()
+function PuttingGreen:paint()
   love.graphics.setColor(color.green)
   love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
   love.graphics.setColor(color.light_green)

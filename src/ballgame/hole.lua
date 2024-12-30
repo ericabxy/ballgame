@@ -11,7 +11,7 @@ local Hole = circle.new{
   radius = 15
 }
 
-function Hole:draw()
+function Hole:paint()
   love.graphics.setColor(color.black)
   love.graphics.circle('fill', self.x, self.y, self.radius)
 end

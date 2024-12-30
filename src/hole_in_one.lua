@@ -25,9 +25,9 @@ function HoleInOne:HoleInOne()
 end
 
 function HoleInOne:draw()
-  self.bounds:draw()
-  self.hole:draw()
-  self.ball:draw()
+  self.bounds:paint()
+  self.hole:paint()
+  self.ball:paint()
   if self.putting then
     love.graphics.setColor(255, 0, 0)
     love.graphics.line(self.ball.x, self.ball.y, self.putting.x, self.putting.y)

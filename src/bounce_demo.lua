@@ -22,8 +22,8 @@ function BounceDemo:BounceDemo()
 end
 
 function BounceDemo:draw()
-  self.bounds:draw()
-  self.ball:draw()
+  self.bounds:paint()
+  self.ball:paint()
 end
 
 function BounceDemo:mousepressed(x, y)end

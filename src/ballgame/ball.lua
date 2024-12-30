@@ -30,7 +30,7 @@ function Ball:decelerate(val)
   end
 end
 
-function Ball:draw()
+function Ball:paint()
   love.graphics.setColor(self.color)
   love.graphics.circle('fill', math.floor(self.x), math.floor(self.y), self.radius) 
 end

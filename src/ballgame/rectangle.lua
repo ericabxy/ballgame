@@ -14,7 +14,7 @@ function Rectangle:center()
   return self.x + self.width / 2, self.y + self.height / 2
 end
 
-function Rectangle:draw()
+function Rectangle:paint()
   love.graphics.setColor(lutro and {255, 255, 255} or {1.00, 1.00, 1.00})
   love.graphics.rectangle('line', self.x, self.y, self.width, self.height)
 end

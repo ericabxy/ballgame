@@ -35,12 +35,12 @@ function OnePocket:OnePocket(width, height)
 end
 
 function OnePocket:draw()
-  self.bounds:draw()
+  self.bounds:paint()
   for _, hole in ipairs(self.holes) do
-    hole:draw()
+    hole:paint()
   end
   for _, ball in ipairs(self.balls) do
-    ball:draw()
+    ball:paint()
   end
   if self.ball then
     love.graphics.setColor(color.red)

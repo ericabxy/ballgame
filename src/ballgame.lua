@@ -20,15 +20,15 @@ local BallGame = {
 }
 
 function BallGame:draw()
-  --self.bounds:draw()
+  --self.bounds:paint()
   for _, rect in ipairs(self.rects) do
-    rect:draw()
+    rect:paint()
   end
   for _, hole in ipairs(self.holes) do
-    hole:draw()
+    hole:paint()
   end
   for _, ball in ipairs(self.balls) do
-    ball:draw()
+    ball:paint()
   end
   if #self.balls < 1 then return end
   if self.ptr_x and self.ptr_y then

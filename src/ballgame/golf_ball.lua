@@ -11,7 +11,7 @@ local GolfBall = ball.new{
   sunk = false,
 }
 
-function GolfBall:draw()
+function GolfBall:paint()
   if not self.sunk then
     love.graphics.setColor(color.dark_gray)
     love.graphics.circle('fill', self.x + 2, self.y + 2, self.radius)

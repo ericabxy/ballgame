@@ -10,7 +10,7 @@ local Surface = boundary.new{
   friction = 0.80
 }
 
-function Surface:draw()
+function Surface:paint()
   love.graphics.setColor(color.green)
   love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end

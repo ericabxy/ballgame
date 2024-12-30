@@ -8,7 +8,7 @@ local foursquare = {}
 -- class table
 local Foursquare = boundary.new{}
 
-function Foursquare:draw()
+function Foursquare:paint()
   love.graphics.setColor(lutro and {192, 192, 192} or {0.75, 0.75, 0.75})
   love.graphics.rectangle('fill', self.x, self.y, self.width / 2, self.height / 2)
   love.graphics.rectangle('fill', self.width / 2, self.height / 2, self.width / 2, self.height / 2)
