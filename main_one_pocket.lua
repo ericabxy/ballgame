@@ -1,11 +1,9 @@
 local ballgame = require('src.ballgame')
-local bounce_demo = require('src.bounce_demo')
 local one_pocket = require('src.one_pocket')
-local hole_in_one = require('src.hole_in_one')
 
 local screen_width = lutro and 320 or 800
 local screen_height = lutro and 240 or 600
-local applet = hole_in_one.new{
+local applet = one_pocket.new{
   width = screen_width,
   height = screen_height
 }
