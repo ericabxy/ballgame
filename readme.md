@@ -6,7 +6,7 @@ This is a two-dimensional physics library and a collection of applets demonstrat
 Building
 --------
 
-Use GNU Make to construct the ".love" files.
+Use [GNU Make](https://www.gnu.org/software/make/) to construct the ".love" files.
 
     make
 
