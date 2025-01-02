@@ -11,6 +11,12 @@ local PoolBall = ball.new{
   sunk = false
 }
 
+-- No shadow, but darken when sunk
+function PoolBall:paint()
+  love.graphics.setColor(self.sunk and self.color - 8 or self.color)
+  love.graphics.circle('fill', self.x, self.y, self.radius) 
+end
+
 -- Transfer momentum from self to ball, assuming they are in collision.
 -- This state should be determined by calling intercept_ball first.
 -- @param ballgame.ball
@@ -47,7 +53,7 @@ function PoolBall:time_to_intercept_ball(ball)
   return (-b - math.sqrt( b * b - 4 * a * c )) / (2 * a)
 end
 
-function PoolBall:intercept_edge()
+function PoolBall:time_to_intercept_edge()
 end
 
 function pool_ball.new(o)

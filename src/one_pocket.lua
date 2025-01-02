@@ -26,10 +26,9 @@ function OnePocket:OnePocket(width, height)
   table.insert(self.balls, pool_ball.new{x = width / 2 - 10, y = height / 4, radius = 8 })
   table.insert(self.balls, pool_ball.new{x = width / 2 + 10, y = height / 4, radius = 8 })
   table.insert(self.balls, pool_ball.new{x = width / 2, y = height / 4 + 14, radius = 8 })
-  self.balls[1].color = color.white
-  self.balls[2].color = color.yellow
-  self.balls[3].color = color.red
-  self.balls[4].color = color.black
+  self.balls[2].color = color[14]
+  self.balls[3].color = color[12]
+  self.balls[4].color = color[8]
   self.bounds = surface.new{width = width, height = height}
   table.insert(self.holes, hole.new{x = width / 6, y = height - height / 6, radius = 15})
 end

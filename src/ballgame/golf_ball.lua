@@ -9,6 +9,7 @@ local golf_ball = {}
 local GolfBall = ball.new{
   radius = 8,
   sunk = false,
+  color_sunk = color.light_gray
 }
 
 function GolfBall:paint()
@@ -16,7 +17,7 @@ function GolfBall:paint()
     love.graphics.setColor(color.dark_gray)
     love.graphics.circle('fill', self.x + 2, self.y + 2, self.radius)
   end
-  love.graphics.setColor(self.sunk and color.light_gray or color.white)
+  love.graphics.setColor(self.sunk and self.color_sunk or self.color)
   love.graphics.circle('fill', self.x, self.y, self.radius) 
 end
 

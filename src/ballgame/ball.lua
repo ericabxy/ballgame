@@ -1,6 +1,7 @@
 --- circle shape with momentum physics
 -- @classmod ballgame.ball
 local circle = require('src.ballgame.circle')
+local color = require('src.ballgame.color')
 local vector = require('src.ballgame.vector')
 
 local ball = {}
@@ -10,7 +11,7 @@ local Ball = circle.new{
   radius = 12,
   dx = 0.00,
   dy = 0.00,
-  color = lutro and {255, 255, 255} or {1.00, 1.00, 1.00},
+  color = color.white,
 }
 
 function Ball:accelerate(x, y)
@@ -32,7 +33,7 @@ end
 
 function Ball:paint()
   love.graphics.setColor(self.color)
-  love.graphics.circle('fill', math.floor(self.x), math.floor(self.y), self.radius) 
+  love.graphics.circle('fill', self.x, self.y, self.radius) 
 end
 
 --- simulate motion through elapsed time
