@@ -1,4 +1,4 @@
---- circular obstacle for bumper pool table
+--- circular obstacle for cue sports
 -- @classmod bumper
 -- requires ballgame
 local ball = require('src.ballgame.ball')

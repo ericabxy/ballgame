@@ -52,9 +52,12 @@ function OnePocket:update(dt)
     for b2 = 1, b1 - 1 do
       local ball1 = self.balls[b1]
       local ball2 = self.balls[b2]
-      local time = ball1:time_to_intercept_ball(ball2)
-      if time < dt and time > 0 then
+      local time1 = ball1:time_to_intercept_ball(ball2)
+      local time2, horz, vert = ball1:time_to_intercept_edge(self.bounds)
+      if time1 > 0 and time1 < dt and time2 > 0 and time1 < time2 then
         ball1:strike_ball(ball2)
+      elseif time2 > 0 and time2 < dt and time1 > 0 and time2 < time1 then
+        ball1:bounce_edge(self.bounds, horz, vert)
       end
     end
   end

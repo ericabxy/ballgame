@@ -8,8 +8,16 @@ local pool_ball = {}
 -- class table
 local PoolBall = ball.new{
   radius = 8,
-  sunk = false
 }
+
+function PoolBall:bounce_edge(t, horizontal, vertical)
+  if t == horizontal then
+    self.dx = -self.dx
+  end
+  if t == vertical then
+    self.dy = -self.dy
+  end
+end
 
 -- No shadow, but darken when sunk
 function PoolBall:paint()
@@ -53,7 +61,16 @@ function PoolBall:time_to_intercept_ball(ball)
   return (-b - math.sqrt( b * b - 4 * a * c )) / (2 * a)
 end
 
-function PoolBall:time_to_intercept_edge()
+function PoolBall:time_to_intercept_edge(bounds)
+  local horizontal = (bounds.width + bounds.x - self.x - self.radius) / self.dx
+  local vertical = (bounds.height + bounds.y - self.y - self.radius) / self.dy
+  if self.dx < 0 then
+    horizontal = (bounds.x - self.x + self.radius) / self.dx
+  end
+  if self.dy < 0 then
+    vertical = (bounds.y - self.y + self.radius) / self.dy
+  end
+  return math.min(horizontal, vertical), horizontal, vertical
 end
 
 function pool_ball.new(o)
